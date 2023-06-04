@@ -37,7 +37,7 @@ onMounted(() => {
   try {
     init(viewRef.value, id, onGetMotions, onMotionClick)
   } catch (error) {
-    // location.reload()
+    location.reload()
   }
 })
 
