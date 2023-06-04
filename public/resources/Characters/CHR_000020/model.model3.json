@@ -1,0 +1,86 @@
+{
+  "FileReferences": {
+    "Moc": "model.moc3",
+    "Motions": {
+      "EF_Idle": [
+        {
+          "File": "motions/EF_Idle.anim.motion3.json"
+        }
+      ],
+      "Idle": [
+        {
+          "File": "motions/Idle.anim.motion3.json"
+        }
+      ],
+      "Idle_Action": [
+        {
+          "File": "motions/Idle_Action.anim.motion3.json"
+        }
+      ],
+      "Idle_Expression": [
+        {
+          "File": "motions/Idle_Expression.anim.motion3.json"
+        }
+      ],
+      "Loop1": [
+        {
+          "File": "motions/Loop1.anim.motion3.json"
+        }
+      ],
+      "Memory_In": [
+        {
+          "File": "motions/Memory_In.anim.motion3.json"
+        }
+      ],
+      "Memory_Loop": [
+        {
+          "File": "motions/Memory_Loop.anim.motion3.json"
+        }
+      ],
+      "Memory_Out": [
+        {
+          "File": "motions/Memory_Out.anim.motion3.json"
+        }
+      ],
+      "Memory_Out_End": [
+        {
+          "File": "motions/Memory_Out_End.anim.motion3.json"
+        }
+      ],
+      "Skill": [
+        {
+          "File": "motions/Skill.anim.motion3.json"
+        }
+      ],
+      "Talk_In": [
+        {
+          "File": "motions/Talk_In.anim.motion3.json"
+        }
+      ],
+      "Talk_Loop": [
+        {
+          "File": "motions/Talk_Loop.anim.motion3.json"
+        }
+      ],
+      "Talk_Out": [
+        {
+          "File": "motions/Talk_Out.anim.motion3.json"
+        }
+      ]
+    },
+    "Physics": "model.physics3.json",
+    "Textures": [
+      "textures/texture_00.png"
+    ]
+  },
+  "Groups": [
+    {
+      "Ids": [
+        "ParamMouthOpenY"
+      ],
+      "Name": "LipSync",
+      "Target": "Parameter"
+    }
+  ],
+  "Version": 3
+}
