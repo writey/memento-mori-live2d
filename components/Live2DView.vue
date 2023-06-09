@@ -1,9 +1,9 @@
 <template lang="">
   <div id="canvas" class="relative w-full h-full view" ref="viewRef">
-    <div class="absolute w-full h-full -z-50 bg-no-repeat bg-cover
-     bg-[url('/resources/Background_Default.png')]">
+    <div class="absolute w-full h-full bg-no-repeat bg-cover
+     bg-[url('/resources/Background_Default.png')] -z-10">
     </div>
-    <div class="absolute flex flex-col items-center w-full h-full">
+    <div class="absolute z-20 flex flex-col items-center w-full h-full">
       <div :class="{'max-h-full': isShowAll}" style="transition: all .5s ease"
         class="flex flex-wrap items-center justify-start max-w-sm mt-3 overflow-hidden transition-all duration-200 ease-in position max-h-16 motions">
         <div class="p-1 m-2 my-3 transition-shadow duration-200 ease-in bg-white border-2 rounded-md shadow cursor-pointer shadow-neutral-500/50 border-neutral-500"

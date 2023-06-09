@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="layout">
+  <div class="layout -z-10">
     <Icons />
     <BGMPlayer />
     <slot />

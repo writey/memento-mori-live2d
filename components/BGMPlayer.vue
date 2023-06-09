@@ -21,7 +21,6 @@ Pubsub.on('changeChr', (id) => {
 
 const play = () => {
   if (isChange) bgm.pause()
-  debugger
   if (!bgm || isChange) bgm = new Audio(`/resources/CharacterSong/${chrId}/${chrId}_SONG_JP.ogg`)
   if (isChange) bgm.load()
   if (!isPlay.value) bgm.pause()
