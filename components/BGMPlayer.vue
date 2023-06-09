@@ -9,23 +9,21 @@ import { ref, onMounted } from 'vue'
 import Pubsub from '@/common/pubsub'
 
 let chrId = 'CHR_000001'
+let isChange = false
 const isPlay = ref(false)
 let bgm
 
-Pubsub.on('changeChr', (chrId) => {
-  chrId = chrId
-  if (isPlay.value) rePlay(chrId)
+Pubsub.on('changeChr', (id) => {
+  chrId = id
+  isChange = true
+  if (isPlay.value) play(id)
 })
 
-const rePlay = (chrId) => {
-  bgm.pause()
-  bgm = new Audio(`/resources/CharacterSong/${chrId}/${chrId}_SONG_JP.ogg`)
-  bgm.load()
-  play()
-}
-
 const play = () => {
-  if (!bgm) bgm = new Audio(`/resources/CharacterSong/${chrId}/${chrId}_SONG_JP.ogg`)
+  if (isChange) bgm.pause()
+  debugger
+  if (!bgm || isChange) bgm = new Audio(`/resources/CharacterSong/${chrId}/${chrId}_SONG_JP.ogg`)
+  if (isChange) bgm.load()
   if (!isPlay.value) bgm.pause()
   else bgm.play()
 }

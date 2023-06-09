@@ -1,25 +1,11 @@
 <template>
   <div id="app">
-    <NuxtLayout v-if="loadDone">
+    <NuxtLayout >
       <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
 <script setup>
-import { onMounted, ref } from 'vue'
-
-const loadDone = ref(false)
-const loadScript = () => {
-  const script = document.createElement('script')
-  script.src = '/live2dcubismcore.js'
-  script.async = true
-  script.defer = true
-  document.head.appendChild(script)
-  loadDone.value = true
-}
-onMounted(() => {
-  loadScript()
-})
 </script>
 
 <style>
