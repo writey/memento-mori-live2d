@@ -6,13 +6,12 @@
  */
 import { LAppDelegate } from './lappdelegate';
 import * as LAppDefine from './lappdefine';
-
+import { LAppLive2DManager } from './lapplive2dmanager';
 /**
  * ブラウザロード後の処理
  */
-export function init(element, model, onGetMotions) {
+export function init(element, modelId, onGetMotions) {
     // create the application instance
-    LAppDefine.ModelDir.splice(0, 1, model)
     LAppDefine.setGetMotionCb(onGetMotions)
   if (LAppDelegate.getInstance().initialize(element) == false) {
     return;
@@ -45,4 +44,9 @@ export function destroy() {
   LAppDelegate.getInstance().release()
   window.onbeforeunload = null
   window.onresize = null
+}
+
+export function changeModel(modelId) {
+  LAppDefine.changeModlDir(modelId)
+  LAppLive2DManager.getInstance().changeScene(0)
 }

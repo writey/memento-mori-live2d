@@ -34,11 +34,7 @@ const onMotionClick = motion => {
 const onGetMotions = (val) => motions.value = val
 
 onMounted(() => {
-  try {
-    init(viewRef.value, id, onGetMotions, onMotionClick)
-  } catch (error) {
-    location.reload()
-  }
+  init(viewRef.value, id, onGetMotions, onMotionClick)
 })
 
 onBeforeUnmount(destroy)

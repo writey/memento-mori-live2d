@@ -107,9 +107,6 @@ export class LAppDelegate {
 
     // Cubism SDKの初期化
     this.initializeCubism();
-
-    console.log(this);
-    console.log(LAppDelegate);
     
 
     return true;
@@ -134,7 +131,6 @@ export class LAppDelegate {
    */
   public release(): void {
     this._textureManager.release();
-    this._textureManager = null;
 
     this._view.release();
     // this._view = null;

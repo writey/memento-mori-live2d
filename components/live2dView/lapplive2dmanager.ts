@@ -144,7 +144,6 @@ export class LAppLive2DManager {
    */
   public onUpdate(): void {
     const { width, height } = canvas;
-
     const modelCount: number = this._models.getSize();
 
     for (let i = 0; i < modelCount; ++i) {

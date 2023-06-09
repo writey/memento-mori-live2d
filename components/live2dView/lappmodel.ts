@@ -40,6 +40,7 @@ import { LAppPal } from './lapppal';
 import { TextureInfo } from './lapptexturemanager';
 import { LAppWavFileHandler } from './lappwavfilehandler';
 import { CubismMotionManager } from '@framework/motion/cubismmotionmanager';
+import { debug } from 'console';
 
 enum LoadStep {
   LoadAssets,
@@ -356,7 +357,6 @@ export class LAppModel extends CubismUserModel {
         this._allMotionCount += this._modelSetting.getMotionCount(group[i]);
       }
       LAppDefine.getMotionCb(group)
-      
       this.createEffectMotion()
       // モーションの読み込み
       for (let i = 0; i < motionGroupCount; i++) {
@@ -366,7 +366,7 @@ export class LAppModel extends CubismUserModel {
       if (motionGroupCount == 0) {
         this._state = LoadStep.LoadTexture;
         // 全てのモーションを停止する
-        this._motionManager.stopAllMotions();
+        this._motionManager?.stopAllMotions();
 
         this._updating = false;
         this._initialized = true;
@@ -820,7 +820,7 @@ export class LAppModel extends CubismUserModel {
             this._state = LoadStep.LoadTexture;
 
             // 全てのモーションを停止する
-            this._motionManager.stopAllMotions();
+            this._motionManager?.stopAllMotions();
 
             this._updating = false;
             this._initialized = true;
