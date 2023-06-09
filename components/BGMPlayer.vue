@@ -6,19 +6,37 @@
 <script setup>
 import { MusicNoteIcon } from '@heroicons/vue/outline'
 import { ref, onMounted } from 'vue'
-const { params: { id } } = useRoute()
+import Pubsub from '@/common/pubsub'
+
+let chrId = 'CHR_000001'
 const isPlay = ref(false)
 let bgm
+
+Pubsub.on('changeChr', (chrId) => {
+  chrId = chrId
+  if (isPlay.value) rePlay(chrId)
+})
+
+const rePlay = (chrId) => {
+  bgm.pause()
+  bgm = new Audio(`/resources/CharacterSong/${chrId}/${chrId}_SONG_JP.ogg`)
+  bgm.load()
+  play()
+}
+
 const play = () => {
-  if (!bgm) bgm = new Audio(`/resources/CharacterSong/${id}/${id}_SONG_JP.ogg`)
+  if (!bgm) bgm = new Audio(`/resources/CharacterSong/${chrId}/${chrId}_SONG_JP.ogg`)
   if (!isPlay.value) bgm.pause()
   else bgm.play()
 }
+
 const changeIsPlay = () => {
   isPlay.value = !isPlay.value
   localStorage.setItem('isPlay', isPlay.value)
   play()
 }
+
+
 onMounted(() => {
   isPlay.value = localStorage.getItem('isPlay') === 'true' || false
   if(isPlay.value) play()

@@ -24,8 +24,6 @@ onMounted(() => {
     .then(res => res.text())
     .then(res => {
       chrIds.value = res.split('\n').map(i => i.trim())
-      if(path !== '/') nextTick(() => setTimeout(() => location.href = `#${id}`, 100))
-      else push(chrIds.value[0])
     })
 })
 </script>

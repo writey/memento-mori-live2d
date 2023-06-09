@@ -21,11 +21,12 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { init, startMotion, destroy } from './live2dView/main'
 import * as LAppDefine from './live2dView/lappdefine'
 
+const route = useRoute()
 const viewRef = ref()
 const motions = ref([])
 const curMotion = ref('Idle_Action')
 const isShowAll = ref(false)
-const { id } = defineProps(['id'])
+const { params: { id = 'CHR_000001' } } = useRoute()
 const onMotionClick = motion => {
   curMotion.value = motion
   startMotion(motion)
